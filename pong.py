@@ -27,3 +27,7 @@ while True:
     ball.sety(ball.ycor() + ball.speed_y)
     if ball.ycor() > 160:
         ball.speed_y *= -1
+    if ball.xcor() > 195:
+        ball.speed_x *= -1
+    if ball.xcor() < -160:
+        ball.speed_x *= -1

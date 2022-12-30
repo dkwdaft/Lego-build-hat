@@ -1,5 +1,10 @@
-from buildhat import Motor
+from  buildhat import  Motor
+from signal import pause
 motor_left = Motor('A')
 
-while True:
-    print(motor_left.get_aposition())
+
+def moved_left(motor_speed, motor_pos, motor_apos):
+    print(motor_apos)
+
+motor_left.when_rotated = moved_left
+pause()

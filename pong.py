@@ -26,3 +26,5 @@ while True:
     game_area.update()
     ball.setx(ball.xcor() + ball.speed_x)
     ball.sety(ball.ycor() + ball.speed_y)
+    if ball.ycor() > 160:
+        ball.speed_y *= -1

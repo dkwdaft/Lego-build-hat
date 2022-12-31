@@ -47,3 +47,6 @@ while True:
     if ball.ycor() < -160:
         ball.speed_y *= -1
     paddle_left.sety(pos_left)
+    if(ball.xcor() < -180 and ball.xcor() > -190) and (ball.ycor() < paddle_left.ycor() + 20 and ball.ycor() > paddle_left.ycor() - 20):
+        ball.setx(-180)
+        ball.speed_x *= -1

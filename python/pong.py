@@ -87,9 +87,13 @@ while True:
         ball.goto(0, 0)
         ball.showturtle()
         score_left += 1
+        writer.clear()
+        writer.write(f'{score_left} PONG {score_right}', font=style, align='center')
 
     if ball.xcor() > 195:  # Right
         ball.hideturtle()
         ball.goto(0, 0)
         ball.showturtle()
         score_right += 1
+        writer.clear()
+        writer.write(f'{score_left} PONG {score_right}', font=style, align='center')

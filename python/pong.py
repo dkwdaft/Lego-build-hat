@@ -2,6 +2,9 @@ from turtle import *
 from time import sleep
 from buildhat import Motor
 
+score_left = 0
+score_right = 0
+
 motor_left = Motor('A')
 motor_right = Motor('B')
 
@@ -31,6 +34,14 @@ paddle_right.shapesize(4, 1, 1)
 paddle_right.penup()
 paddle_right.setpos(190, 0)
 
+writer = Turtle()
+writer.hideturtle()
+writer.color('grey')
+writer.penup()
+style = ('Courier', 30, 'bold')
+writer.setposition(0, 150)
+writer.write(f'{score_left} PONG {score_right}', font=style, align='center')
+
 ball.speed_x = 0.4
 ball.speed_y = 0.4
 
@@ -57,10 +68,7 @@ while True:
     ball.sety(ball.ycor() + ball.speed_y)
     if ball.ycor() > 160:
         ball.speed_y *= -1
-    if ball.xcor() > 195:
-        ball.hideturtle()
-        ball.goto(0, 0)
-        ball.showturtle()
+
     if ball.ycor() < -160:
         ball.speed_y *= -1
     paddle_left.sety(pos_left)
@@ -78,3 +86,10 @@ while True:
         ball.hideturtle()
         ball.goto(0, 0)
         ball.showturtle()
+        score_left += 1
+
+ if ball.xcor() > 195: # Right
+        ball.hideturtle()
+        ball.goto(0, 0)
+        ball.showturtle()
+        score_right += 1

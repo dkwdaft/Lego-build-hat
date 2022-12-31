@@ -50,3 +50,7 @@ while True:
     if(ball.xcor() < -180 and ball.xcor() > -190) and (ball.ycor() < paddle_left.ycor() + 20 and ball.ycor() > paddle_left.ycor() - 20):
         ball.setx(-180)
         ball.speed_x *= -1
+    if ball.xcor() < -195: # Left
+        ball.hideturtle()
+        ball.goto(0, 0)
+        ball.showturtle()

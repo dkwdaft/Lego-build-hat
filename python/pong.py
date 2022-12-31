@@ -86,7 +86,7 @@ while True:
         ball.hideturtle()
         ball.goto(0, 0)
         ball.showturtle()
-        score_left += 1
+        score_right += 1
         writer.clear()
         writer.write(f'{score_left} PONG {score_right}', font=style, align='center')
 
@@ -94,6 +94,6 @@ while True:
         ball.hideturtle()
         ball.goto(0, 0)
         ball.showturtle()
-        score_right += 1
+        score_left += 1
         writer.clear()
         writer.write(f'{score_left} PONG {score_right}', font=style, align='center')

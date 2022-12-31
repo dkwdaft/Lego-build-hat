@@ -88,7 +88,7 @@ while True:
         ball.showturtle()
         score_left += 1
 
- if ball.xcor() > 195: # Right
+    if ball.xcor() > 195:  # Right
         ball.hideturtle()
         ball.goto(0, 0)
         ball.showturtle()

@@ -1,5 +1,5 @@
 from turtle import *
-from time import sleep
+
 from buildhat import Motor
 
 score_left = 0
@@ -73,12 +73,12 @@ while True:
         ball.speed_y *= -1
     paddle_left.sety(pos_left)
     paddle_right.sety(pos_right)
-    if (ball.xcor() < -180 and ball.xcor() > -190) and (
-            ball.ycor() < paddle_left.ycor() + 20 and ball.ycor() > paddle_left.ycor() - 20):
+    if (-180 > ball.xcor() > -190) and (
+            paddle_left.ycor() + 20 > ball.ycor() > paddle_left.ycor() - 20):
         ball.setx(-180)
         ball.speed_x *= -1
 
-    if(ball.xcor() > 180 and ball.xcor() < 190) and (ball.ycor() < paddle_right.ycor() + 20 and ball.ycor() > paddle_right.ycor() - 20):
+    if(180 < ball.xcor() < 190) and (paddle_right.ycor() + 20 > ball.ycor() > paddle_right.ycor() - 20):
         ball.setx(180)
         ball.speed_x *= -1
 

@@ -5,7 +5,7 @@ from buildhat import Motor
 score_left = 0
 score_right = 0
 
-buzz = Buzzer(17)
+buzz = Buzzer(22)
 
 motor_left = Motor('A')
 motor_right = Motor('B')

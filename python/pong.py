@@ -1,9 +1,11 @@
 from turtle import *
-
+from gpiozero import Buzzer
 from buildhat import Motor
 
 score_left = 0
 score_right = 0
+
+buzz = Buzzer(17)
 
 motor_left = Motor('A')
 motor_right = Motor('B')
@@ -77,16 +79,19 @@ while True:
             paddle_left.ycor() + 20 > ball.ycor() > paddle_left.ycor() - 20):
         ball.setx(-180)
         ball.speed_x *= -1
+        buzz.beep(0.1, 0.1, background=True)
 
     if(180 < ball.xcor() < 190) and (paddle_right.ycor() + 20 > ball.ycor() > paddle_right.ycor() - 20):
         ball.setx(180)
         ball.speed_x *= -1
+        buzz.beep(0.1, 0.1, background=True)
 
     if ball.xcor() < -195:  # Left
         ball.hideturtle()
         ball.goto(0, 0)
         ball.showturtle()
         score_right += 1
+        buzz.beep(0.5, 0.5, background=True
         writer.clear()
         writer.write(f'{score_left} PONG {score_right}', font=style, align='center')
 
@@ -95,5 +100,6 @@ while True:
         ball.goto(0, 0)
         ball.showturtle()
         score_left += 1
+        buzz.beep(0.5, 0.5, background=True
         writer.clear()
         writer.write(f'{score_left} PONG {score_right}', font=style, align='center')
